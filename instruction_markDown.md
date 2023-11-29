@@ -137,3 +137,25 @@ Alt-H2
 [1]: http://slashdot.org
 [текст ссылки]: http://www.reddit.com
 (*) Для символов не входящих в ASCII, например кириллицы, текст сноски все-таки регистрозависим (прим. перев.)   
+
+## Изображения
+
+Вот наш логотип (наведите указатель, чтобы увидеть текст заголовка):
+``` sh
+Внутри строки:  
+![alt-текст](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовка логотипа 1")
+
+В сноске:  
+![alt-текст][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовкзаголовка логотипа 2"  
+```   
+Внутри строки:  
+![alt-текст](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовка логотипа 1")
+
+В сноске:  
+![alt-текст][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовкзаголовка логотипа 2"  
+
+
