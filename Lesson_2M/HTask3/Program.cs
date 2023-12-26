@@ -8,8 +8,9 @@ if (number >= 10 && number <= 99)
 {
     int firstNum = number /10;
     int secondNum = number % 10;
-
-    int maxNum = firstNum > secondNum ? firstNum:secondNum;
+// Про тернарные операции в C# (сокращенная проверка) мы узнали вот из этой статьи. Здесь вопрос ставится сразу после условия, которое необходимо проверить. 
+// в тернарной операции знак вопроса (?) используется в паре с двоеточием (:) и читается код выше следующим образом: если остаток от деление числа на два равен нулю, то число четное, иначе — нечетное.
+    int maxNum = firstNum > secondNum ? firstNum:secondNum; 
     Console.WriteLine(maxNum);
 }
 else
