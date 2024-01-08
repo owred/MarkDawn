@@ -12,3 +12,28 @@ while (i < n)
     i += 1;
 }
 Console.WriteLine(max);
+
+// Через For
+
+max = 0;
+for(int j = 0; j < n; j++)   //j++  = j=j+1
+{
+    if (array[j] > max)
+    {
+        max = array[j];
+    }
+}
+Console.WriteLine(max);
+
+
+// Через Foreach
+
+max = 0;
+foreach(int e in array)
+{
+    if(e > max)
+    {
+        max = e;
+    }
+}
+Console.WriteLine(max);
