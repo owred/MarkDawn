@@ -2,22 +2,86 @@
 // Результат запишите в новый массив
 
 using System;
+using System.Collections.Generic;
 
-class Program
+class PrimeNumbersCounter
 {
-    static void Main()
+    // Метод для генерации случайного массива заданной длины
+    // length - длина массива
+    public static int[] GenerateRandomArray(int length)
     {
-        int[] arr = {1,3,2,4,2,3};
-        int[] result = new int[arr.Length / 2 + arr.Length % 2]; // Создаем новый массив для записи результата
-        int j = 0;
-        for(int i = 0; i < arr.Length - 1; i += 2) // проходим по исходному массиву с шагом
+        Random random = new Random();
+        int[] numbers = new int[length];
+        for (int i = 0; i < numbers.Length; i++)
         {
-            result[j] = arr[i * arr[i + 1]]; // Вычисляем произведение текущего элемента и следующего элемента 
-            j++; //увиличиваем индекс нового массива 
+            numbers[i] = random.Next(1, 100);
         }
-        if(arr.Length % 2 != 0) // Если длина не четная, то последний элемент не имеет пары
-        {
-            result[j] = arr[arr.Length - 1]; // Записываем последний элемент в новый массив
-        }
-        Console.WriteLine(string.Join(" ", result)); //Выводим результат в консоль
+        return numbers;
     }
+
+    // Метод для подсчета количества простых чисел в массиве и вывода списка простых чисел
+    // numbers - массив, в котором ведется подсчет
+    public static void CountPrimeNumbers(int[] numbers, out int count, out List<int> primes)
+    {
+        count = 0;
+        primes = new List<int>();
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (IsPrime(numbers[i]))
+            {
+                count++;
+                primes.Add(numbers[i]);
+            }
+        }
+    }
+
+    // Метод для определения является ли число простым
+    // number - число, которое проверяется на простоту
+    public static bool IsPrime(int number)
+    {
+        if (number < 2) return false;
+
+        // Проверяем только делители от 2 до корня из числа
+        for (int i = 2; i <= Math.Sqrt(number); i++)
+        {
+            if (number % i == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Метод для вывода результата на экран
+    // count - количество простых чисел в массиве
+    // primes - список простых чисел в массиве
+    public static void PrintResult(int count, List<int> primes)
+    {
+        Console.WriteLine("Количество простых чисел в массиве: " + count);
+        Console.WriteLine("Список простых чисел в массиве: " + string.Join(", ", primes));
+    }
+}
+
+class Answer
+{
+    public static void Main(string[] args)
+    {
+        int[] array;
+
+        if (args.Length >= 1)
+        {
+            // Преобразуем аргумент командной строки в целое число
+            int length = int.Parse(args[0]);
+            array = PrimeNumbersCounter.GenerateRandomArray(length);
+        }
+        else
+        {
+            array = PrimeNumbersCounter.GenerateRandomArray(10);
+        }
+
+        int count;
+        List<int> primes;
+        PrimeNumbersCounter.CountPrimeNumbers(array, out count, out primes);
+        PrimeNumbersCounter.PrintResult(count, primes);
+    }
+}
