@@ -24,13 +24,13 @@ void Print(int[] arr)
 
 int MyFunction(int[] arr)
 {
-        int count = 0;
-        for (int i = 0; i < arr.Length; i++)
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] % 7 == 0 && arr[i] % 10 == 1)
-            {
+        {
             count++;
-            }
+        }
     }
     return count;
 }
