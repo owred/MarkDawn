@@ -8,7 +8,7 @@ string GetLettersFromStr(string s)
     {
         if (char.IsAsciiLetter(e) == true)
         {
-            letters = letters + e;
+            letters += e;
         }
     }
     return letters;
