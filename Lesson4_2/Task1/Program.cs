@@ -3,15 +3,15 @@
 
 string GetLettersFromStr(string s)
 {
-string letters = "";
-foreach (char e in s)
-{
-if (char.IsLetter(e))
-{
-letters = letters + e;
-}
-}
-return letters;
+    string letters = "";
+    foreach (char e in s)
+    {
+        if (char.IsLetter(e))
+        {
+            letters = letters + e;
+        }
+    }
+    return letters;
 }
 
 string str = Console.ReadLine();
