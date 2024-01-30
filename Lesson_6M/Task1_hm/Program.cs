@@ -1,6 +1,6 @@
 ﻿// Задайте двумерный массив символов (тип char [,]). Создать строку из символов этого массива.
 
-public class Task1
+public class Task1_hm
 {
 public static void Main(string[] args)
 {

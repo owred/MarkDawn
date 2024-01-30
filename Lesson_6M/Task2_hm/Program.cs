@@ -1,6 +1,6 @@
 ﻿// Замена заглавных букв на строчные в строке
 
-public class Task2
+public class Task2_hm
 {
 public static void Main(string[] args)
 {
