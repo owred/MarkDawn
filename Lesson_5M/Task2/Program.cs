@@ -1,4 +1,4 @@
-﻿// Создайте двумерный массив.Найдите элементы, у которых оба индекса четные, замените эти элименты на их квадраты
+﻿// Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали(с индексами(0,0); (1,1) и т.д.)
 
 int[,] CreateMatrix(int rowCount, int columsCount) // функция создания матрицы с элементами от 1 до 999
 {
@@ -29,17 +29,21 @@ void ShowMatrix(int[,] matrix) //Функция вывода матрицы на
 int[,] matrix = CreateMatrix(3, 4); //Задание размера матрицы и инициализация интересного числа
 ShowMatrix(matrix);
 
-void evenIndex(int[,] array)
+int sumDiagonal(int[,] array)
 {
-   for (int i = 0; i < array.GetLength(0); i+=2)
+    int sum = 0;
+   for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j+=2)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = array[i, j] * array[i, j];
+            if(i==j)
+            {
+                sum = array[i, j] + sum;
+            }
         }
-        Console.WriteLine();
     }
+    return sum;
 }
 
-evenIndex(matrix);
-ShowMatrix(matrix);
+
+Console.WriteLine(sumDiagonal(matrix));
