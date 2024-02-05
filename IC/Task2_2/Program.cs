@@ -9,7 +9,7 @@ void rec(int m, int n)
 {
     if (m > n)
         return;
-    if (m %2 == 0)
+    if (m %2 == 0 && m !=0)
     {
         Console.Write($"{ m}, ");
     }
