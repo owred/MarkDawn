@@ -1,8 +1,23 @@
 ﻿// Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
 
-System.Console.WriteLine("Задача 3: Задайте произвольный массив. Выведете его элементы,");
-System.Console.WriteLine("начиная с конца. Использовать рекурсию, не использовать циклы.");
-int [] array = CreateArray(10,10,0);
-System.Console.WriteLine($"Произвольный массив => [{PrintArray(array)}]");
-System.Console.WriteLine($"Перевернутый массив => [{PrintArray(ArraySwap(array,array.Length-1))}]");
+using System;
 
+class Program
+{
+    static void Main()
+    {
+        int[] array = { 1, 2, 3, 4, 5 };
+
+        PrintArrayReversed(array, array.Length - 1);
+
+        Console.ReadLine();
+    }
+    static void PrintArrayReversed(int[] array, int index)
+    {
+        if (index >= 0)
+        {
+            Console.Write(array[index] + " ");
+            PrintArrayReversed(array, index - 1);
+        }
+    }
+}
